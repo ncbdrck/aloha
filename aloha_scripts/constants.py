@@ -1,6 +1,6 @@
 ### Task parameters
 
-DATA_DIR = '<put your data dir here>'
+DATA_DIR = '/home/sri-aloha/Projects/aloha_data'
 TASK_CONFIGS = {
     'aloha_wear_shoe':{
         'dataset_dir': DATA_DIR + '/aloha_wear_shoe',
@@ -8,6 +8,54 @@ TASK_CONFIGS = {
         'episode_len': 1000,
         'camera_names': ['cam_high', 'cam_low', 'cam_left_wrist', 'cam_right_wrist']
     },
+
+    'aloha_stationary_dummy':{
+        'dataset_dir': DATA_DIR + '/aloha_stationary_dummy',
+        'episode_len': 800,
+        'camera_names': ['cam_high', 'cam_left_wrist', 'cam_right_wrist']
+    },
+
+    'aloha_stationary_test':{
+            'dataset_dir': DATA_DIR + '/aloha_stationary_test',
+            'episode_len': 500,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
+
+    'aloha_stationary_pnp_one_arm':{
+            'dataset_dir': DATA_DIR + '/aloha_stationary_pnp_one_arm',
+            'episode_len': 500,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
+
+    'aloha_stationary_pnp_both_arms':{
+            'dataset_dir': DATA_DIR + '/aloha_stationary_pnp_both_arms',
+            'episode_len': 1000,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
+
+    'aloha_stationary_cube_sorting':{
+            'dataset_dir': DATA_DIR + '/cube_sort/aloha_stationary_cube_sorting',
+            'episode_len': 1250,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
+
+    'aloha_stationary_rgb_cube_sorting':{
+            'dataset_dir': DATA_DIR + '/cube_sort/aloha_stationary_rgb_cube_sorting',
+            'episode_len': 1250,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
+
+    'aloha_stationary_rgb_cube_sorting_v1':{
+            'dataset_dir': DATA_DIR + '/cube_sort/aloha_stationary_rgb_cube_sorting_v1',
+            'episode_len': 1250,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
+
+    'aloha_stationary_rgb_cube_sorting_co_train_v1':{
+            'dataset_dir': DATA_DIR + '/cube_sort/aloha_stationary_rgb_cube_sorting_co_train_v1',
+            'episode_len': 1250,
+            'camera_names': ['cam_high', 'cam_low', 'cam_right_wrist', 'cam_left_wrist']
+        },
 }
 
 ### ALOHA fixed constants
@@ -16,16 +64,16 @@ JOINT_NAMES = ["waist", "shoulder", "elbow", "forearm_roll", "wrist_angle", "wri
 START_ARM_POSE = [0, -0.96, 1.16, 0, -0.3, 0, 0.02239, -0.02239,  0, -0.96, 1.16, 0, -0.3, 0, 0.02239, -0.02239]
 
 # Left finger position limits (qpos[7]), right_finger = -1 * left_finger
-MASTER_GRIPPER_POSITION_OPEN = 0.02417
-MASTER_GRIPPER_POSITION_CLOSE = 0.01244
-PUPPET_GRIPPER_POSITION_OPEN = 0.05800
-PUPPET_GRIPPER_POSITION_CLOSE = 0.01844
+MASTER_GRIPPER_POSITION_OPEN = 0.02417  # 0.0323
+MASTER_GRIPPER_POSITION_CLOSE = 0.01244  # 0.0185
+PUPPET_GRIPPER_POSITION_OPEN = 0.05800  # 0.0579
+PUPPET_GRIPPER_POSITION_CLOSE = 0.01844  # 0.0440
 
 # Gripper joint limits (qpos[6])
-MASTER_GRIPPER_JOINT_OPEN = 0.3083
-MASTER_GRIPPER_JOINT_CLOSE = -0.6842
-PUPPET_GRIPPER_JOINT_OPEN = 1.4910
-PUPPET_GRIPPER_JOINT_CLOSE = -0.6213
+MASTER_GRIPPER_JOINT_OPEN = 0.3083  # 0.8298
+MASTER_GRIPPER_JOINT_CLOSE = -0.6842  # -0.0552
+PUPPET_GRIPPER_JOINT_OPEN = 1.4910  # 1.6214
+PUPPET_GRIPPER_JOINT_CLOSE = -0.6213  # 0.6197
 
 ############################ Helper functions ############################
 
