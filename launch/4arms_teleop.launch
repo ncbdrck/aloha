@@ -1,7 +1,7 @@
 <launch>
 
   <arg name="robot_model_master"                default="wx250s"/>
-  <arg name="robot_model_puppet"                default="vx300s"/>
+  <arg name="robot_model_puppet"                default="vx300"/>
 
   <arg name="base_link_master"                  default="base_link"/>
   <arg name="base_link_puppet"                  default="base_link"/>
@@ -87,58 +87,77 @@
     type="static_transform_publisher"
     args="0 0.25 0 0 0 0 /world /$(arg robot_name_puppet_right)/base_link"/>
 
-  <node name="usb_cam_high" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/CAM_HIGH" />
-    <param name="framerate" value="60" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="io_method" value="mmap"/>
-    <param name="autofocus" value="false"/>
-    <param name="focus" value="5"/>
-    <param name="autoexposure" value="true"/>
-  </node>
+  <!-- RealSense D405 Camera Nodes -->
+  <!-- High Camera -->
+  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+    <arg name="camera"              value="cam_high"/>
+    <arg name="serial_no"           value="218622270769"/>
+    <arg name="device_type"         value="d405"/>
+    <arg name="color_width"         value="640"/>
+    <arg name="color_height"        value="480"/>
+    <arg name="color_fps"           value="60"/>
+    <arg name="depth_width"         value="640"/>
+    <arg name="depth_height"        value="480"/>
+    <arg name="depth_fps"           value="60"/>
+    <arg name="enable_depth"        value="false"/>
+    <arg name="enable_infra"        value="false"/>
+    <arg name="enable_infra1"       value="false"/>
+    <arg name="enable_infra2"       value="false"/>
+    <arg name="enable_color"        value="true"/>
+  </include>
 
-  <node name="usb_cam_low" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/CAM_LOW" />
-    <param name="framerate" value="60" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="io_method" value="mmap"/>
-    <param name="autofocus" value="false"/>
-    <param name="focus" value="35"/>
-    <param name="autoexposure" value="true"/>
-  </node>
+  <!-- Low Camera -->
+  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+    <arg name="camera"              value="cam_low"/>
+    <arg name="serial_no"           value="218622277703"/>
+    <arg name="device_type"         value="d405"/>
+    <arg name="color_width"         value="640"/>
+    <arg name="color_height"        value="480"/>
+    <arg name="color_fps"           value="60"/>
+    <arg name="depth_width"         value="640"/>
+    <arg name="depth_height"        value="480"/>
+    <arg name="depth_fps"           value="60"/>
+    <arg name="enable_depth"        value="false"/>
+    <arg name="enable_infra"        value="false"/>
+    <arg name="enable_infra1"       value="false"/>
+    <arg name="enable_infra2"       value="false"/>
+    <arg name="enable_color"        value="true"/>
+  </include>
 
-  <node name="usb_cam_left_wrist" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/CAM_LEFT_WRIST" />
-    <param name="framerate" value="60" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="io_method" value="mmap"/>
-    <param name="autofocus" value="false"/>
-    <param name="focus" value="40"/>
-    <param name="autoexposure" value="true"/>
-  </node>
+  <!-- Left Wrist Camera -->
+  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+    <arg name="camera"              value="cam_left_wrist"/>
+    <arg name="serial_no"           value="427622271858"/>
+    <arg name="device_type"         value="d405"/>
+    <arg name="color_width"         value="640"/>
+    <arg name="color_height"        value="480"/>
+    <arg name="color_fps"           value="60"/>
+    <arg name="depth_width"         value="640"/>
+    <arg name="depth_height"        value="480"/>
+    <arg name="depth_fps"           value="60"/>
+    <arg name="enable_depth"        value="false"/>
+    <arg name="enable_infra"        value="false"/>
+    <arg name="enable_infra1"       value="false"/>
+    <arg name="enable_infra2"       value="false"/>
+    <arg name="enable_color"        value="true"/>
+  </include>
 
-  <node name="usb_cam_right_wrist" pkg="usb_cam" type="usb_cam_node" output="screen" >
-    <param name="video_device" value="/dev/CAM_RIGHT_WRIST" />
-    <param name="framerate" value="60" />
-    <param name="image_width" value="640" />
-    <param name="image_height" value="480" />
-    <param name="pixel_format" value="yuyv" />
-    <param name="camera_frame_id" value="usb_cam" />
-    <param name="io_method" value="mmap"/>
-    <param name="autofocus" value="false"/>
-    <param name="focus" value="40"/>
-    <param name="autoexposure" value="true"/>
-  </node>
-
-
+  <!-- Right Wrist Camera -->
+  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+    <arg name="camera"              value="cam_right_wrist"/>
+    <arg name="serial_no"           value="409122274670"/>
+    <arg name="device_type"         value="d405"/>
+    <arg name="color_width"         value="640"/>
+    <arg name="color_height"        value="480"/>
+    <arg name="color_fps"           value="60"/>
+    <arg name="depth_width"         value="640"/>
+    <arg name="depth_height"        value="480"/>
+    <arg name="depth_fps"           value="60"/>
+    <arg name="enable_depth"        value="false"/>
+    <arg name="enable_infra"        value="false"/>
+    <arg name="enable_infra1"       value="false"/>
+    <arg name="enable_infra2"       value="false"/>
+    <arg name="enable_color"        value="true"/>
+  </include>
 
 </launch>
