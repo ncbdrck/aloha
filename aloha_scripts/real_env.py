@@ -38,9 +38,9 @@ class RealEnv:
     """
 
     def __init__(self, init_node, setup_robots=True):
-        self.puppet_bot_left = InterbotixManipulatorXS(robot_model="vx300s", group_name="arm", gripper_name="gripper",
+        self.puppet_bot_left = InterbotixManipulatorXS(robot_model="vx300", group_name="arm", gripper_name="gripper",
                                                        robot_name=f'puppet_left', init_node=init_node)
-        self.puppet_bot_right = InterbotixManipulatorXS(robot_model="vx300s", group_name="arm", gripper_name="gripper",
+        self.puppet_bot_right = InterbotixManipulatorXS(robot_model="vx300", group_name="arm", gripper_name="gripper",
                                                         robot_name=f'puppet_right', init_node=False)
         if setup_robots:
             self.setup_robots()
