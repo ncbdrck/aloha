@@ -89,7 +89,7 @@
 
   <!-- RealSense D405 Camera Nodes -->
   <!-- High Camera -->
-  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
     <arg name="camera"              value="cam_high"/>
     <arg name="serial_no"           value="218622270769"/>
     <arg name="device_type"         value="d405"/>
@@ -107,7 +107,7 @@
   </include>
 
   <!-- Low Camera -->
-  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
     <arg name="camera"              value="cam_low"/>
     <arg name="serial_no"           value="218622277703"/>
     <arg name="device_type"         value="d405"/>
@@ -125,7 +125,7 @@
   </include>
 
   <!-- Left Wrist Camera -->
-  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
     <arg name="camera"              value="cam_left_wrist"/>
     <arg name="serial_no"           value="427622271858"/>
     <arg name="device_type"         value="d405"/>
@@ -143,7 +143,7 @@
   </include>
 
   <!-- Right Wrist Camera -->
-  <include file="$(find realsense2_camera)/launch/rs_launch.py">
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
     <arg name="camera"              value="cam_right_wrist"/>
     <arg name="serial_no"           value="409122274670"/>
     <arg name="device_type"         value="d405"/>
