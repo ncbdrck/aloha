@@ -44,7 +44,7 @@ def press_to_start(master_bot):
 
 def teleop(robot_side):
     """ A standalone function for experimenting with teleoperation. No data recording. """
-    puppet_bot = InterbotixManipulatorXS(robot_model="vx300", group_name="arm", gripper_name="gripper", robot_name=f'puppet_{robot_side}', init_node=True)
+    puppet_bot = InterbotixManipulatorXS(robot_model="vx300s", group_name="arm", gripper_name="gripper", robot_name=f'puppet_{robot_side}', init_node=True)
     master_bot = InterbotixManipulatorXS(robot_model="wx250s", group_name="arm", gripper_name="gripper", robot_name=f'master_{robot_side}', init_node=False)
 
     prep_robots(master_bot, puppet_bot)

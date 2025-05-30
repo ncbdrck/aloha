@@ -1,7 +1,7 @@
 <launch>
 
   <arg name="robot_model_master"                default="wx250s"/>
-  <arg name="robot_model_puppet"                default="vx300"/>
+  <arg name="robot_model_puppet"                default="vx300s"/>
 
   <arg name="base_link_master"                  default="base_link"/>
   <arg name="base_link_puppet"                  default="base_link"/>
