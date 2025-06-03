@@ -31,7 +31,7 @@ class ImageRecorder:
                 callback_func = self.image_cb_cam_right_wrist
             else:
                 raise NotImplementedError
-            rospy.Subscriber(f"/{cam_name}/camera/color/image_rect_raw", Image, callback_func)
+            rospy.Subscriber(f"/{cam_name}/color/image_raw", Image, callback_func)  # In ROS1 the topic is different for D405
             if self.is_debug:
                 setattr(self, f'{cam_name}_timestamps', deque(maxlen=50))
         time.sleep(0.5)

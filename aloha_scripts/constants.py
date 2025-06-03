@@ -1,6 +1,6 @@
 ### Task parameters
 
-DATA_DIR = '/home/sri-aloha/Projects/aloha_data'
+DATA_DIR = '/home/sri-tus/Projects/aloha_data'
 TASK_CONFIGS = {
     'aloha_wear_shoe':{
         'dataset_dir': DATA_DIR + '/aloha_wear_shoe',
