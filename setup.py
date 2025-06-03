@@ -1,10 +1,16 @@
 from distutils.core import setup
-from setuptools import find_packages
+from catkin_pkg.python_setup import generate_distutils_setup
 
-setup(
+# fetch values from package.xml
+setup_args = generate_distutils_setup(
     name='aloha',
-    version='0.0.0',
-    packages=find_packages(),
-    license='MIT License',
-    long_description=open('README.md').read(),
+    packages=['aloha'],
+    package_dir={'': 'src'},
+
+    description="ALOHA: A Low-cost Open-source Hardware System for Bimanual Teleoperation",
+
+    author='Tony Zhao',
+    author_email='tonyzhao@stanford.edu',
 )
+
+setup(**setup_args)
